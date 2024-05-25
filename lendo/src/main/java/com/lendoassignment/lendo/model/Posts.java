@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class Posts {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long post_id;
     
     @ManyToOne
