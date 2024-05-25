@@ -22,8 +22,8 @@ public class AppConfig {
         httpSecurity
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(authorize -> 
-                authorize.requestMatchers("/api/auth/**").permitAll() 
-                         .requestMatchers("/api/**").authenticated() 
+                authorize.requestMatchers("/auth/**").permitAll() 
+                         .requestMatchers("/public/v2/**").authenticated() 
                          .anyRequest().permitAll()
             )
             .addFilterBefore(new JwtValidator(), UsernamePasswordAuthenticationFilter.class)

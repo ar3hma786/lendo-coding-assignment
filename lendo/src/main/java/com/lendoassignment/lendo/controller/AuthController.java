@@ -45,7 +45,7 @@ public class AuthController {
 		this.customUserDetailsService = customUserDetailsService;
 	}
 
-	@PostMapping("/auth/createuser")
+	@PostMapping("/createuser")
 	public ResponseEntity<AuthResponse> createUser(@RequestBody Users user) throws UsersException {
 
 		String email = user.getEmail();
@@ -85,7 +85,7 @@ public class AuthController {
 
 	}
 	
-	@PostMapping("/auth/loginuser")
+	@PostMapping("/loginuser")
     public ResponseEntity<AuthResponse> loginuser(@RequestBody LoginRequest loginRequest) throws UsersException {
 		
 		        String email = loginRequest.getEmail();
