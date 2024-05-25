@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 public class Comments {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long commentId;
     
     @ManyToOne
