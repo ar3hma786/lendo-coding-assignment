@@ -1,6 +1,7 @@
 package com.lendoassignment.lendo.service;
 
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -55,6 +56,13 @@ public class CommentsServiceImpl implements CommentsService
 		}
 		
 		return comment.get();
+	}
+
+
+	@Override
+	public List<Comments> getAllComments() {
+	
+		return commentRepository.findAll();
 	}
 
 

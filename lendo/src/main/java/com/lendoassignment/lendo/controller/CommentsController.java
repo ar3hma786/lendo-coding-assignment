@@ -1,5 +1,7 @@
 package com.lendoassignment.lendo.controller;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +21,7 @@ import com.lendoassignment.lendo.service.CommentsService;
 import com.lendoassignment.lendo.service.UsersService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/public/v2")
 public class CommentsController {
 	
 	private CommentsService commentService;
@@ -47,6 +49,13 @@ public class CommentsController {
 		Comments comment = commentService.findCommentById(commentId);
         return new ResponseEntity<Comments>(comment, HttpStatus.OK);
 
+	}
+	
+	@GetMapping("/comments")
+	public ResponseEntity<List<Comments>> getAllComments()
+	{
+		List<Comments> comments = commentService.getAllComments();
+		return new ResponseEntity<List<Comments>>(comments, HttpStatus.OK);
 	}
 
 }

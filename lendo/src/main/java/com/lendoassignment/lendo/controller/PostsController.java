@@ -15,7 +15,7 @@ import com.lendoassignment.lendo.service.PostsService;
 import com.lendoassignment.lendo.service.UsersService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/public/v2")
 public class PostsController {
 
     @Autowired
